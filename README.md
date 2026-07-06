@@ -21,7 +21,7 @@ Each notebook in this repository follows the same rigorous, hands-on structure:
 The repository is structured to take you on a journey through different variations of the attention mechanism, each one built directly on top of the last.
 
 ### 1. Vanilla Dot-Product Attention (Complete)
-**Notebook:** [`vanilla-dot-product-attention.ipynb`](vanilla-dot-product-attention.ipynb)
+**Notebook:** [`1-vanilla-dot-product-attention.ipynb`](1-vanilla-dot-product-attention.ipynb)
 
 The most basic form of self-attention, implemented **without any learnable parameters**:
 - **Token Embeddings:** Representing words as numerical vectors.
@@ -30,7 +30,7 @@ The most basic form of self-attention, implemented **without any learnable param
 - **Calculating Context Vectors:** Creating context-aware representations by taking a weighted sum of the original embeddings.
 
 ### 2. Self-Attention with Trainable Weights (Complete)
-**Notebook:** [`self-attention-with-trainable-weights.ipynb`](self-attention-with-trainable-weights.ipynb)
+**Notebook:** [`2-self-attention-with-trainable-weights.ipynb`](2-self-attention-with-trainable-weights.ipynb)
 
 Extends vanilla attention with the three learnable projection matrices used in real attention layers:
 - **Query, Key, and Value Projections:** Deriving $W_q$, $W_k$, and $W_v$ and explaining, in plain terms, why a model needs three separate "lenses" instead of one.
@@ -38,7 +38,7 @@ Extends vanilla attention with the three learnable projection matrices used in r
 - **A Reusable `SelfAttention` Module:** Packaging the mechanism first with raw `nn.Parameter` matrices, then with `nn.Linear`, and proving both give identical results once their weights are aligned.
 
 ### 3. Causal (Masked) Attention (Complete)
-**Notebook:** [`causal-attention.ipynb`](causal-attention.ipynb)
+**Notebook:** [`3-causal-attention.ipynb`](3-causal-attention.ipynb)
 
 Restricts each token to only attend to itself and the tokens before it — the mechanism that makes autoregressive, GPT-style generation possible:
 - **Why Hide the Future:** An intuitive explanation of why training must match how the model is actually used at generation time.
@@ -47,7 +47,7 @@ Restricts each token to only attend to itself and the tokens before it — the m
 - **A Reusable `CausalAttention` Module:** Supporting full batches of input, with a `register_buffer`-based mask.
 
 ### 4. Multi-Head Attention (Complete)
-**Notebook:** [`multi-head-attention.ipynb`](multi-head-attention.ipynb)
+**Notebook:** [`4-multi-head-attention.ipynb`](4-multi-head-attention.ipynb)
 
 Runs several attention computations in parallel so the model can capture different kinds of relationships at once:
 - **The Wrapper Approach:** Building multi-head attention the intuitive way, by stacking independent `CausalAttention` instances.
